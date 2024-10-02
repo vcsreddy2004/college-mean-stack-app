@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="card col-md-5 m-auto shadow-lg mt-5">
+        <div *ngIf="this.studentData.errorMessage != ''" class="badge badge-danger bg-danger">
+            <h4>
+                {{this.studentData.errorMessage}}
+            </h4>
+        </div>
+        <div class="card-header bg-dark text-white">
+            Register
+        </div>
+        <div class="card-body">
+            <span>
+                First Name <span>*</span>
+            </span><br>
+            <input type="text" [(ngModel)]="studentData.firstName" class="col-md-12" /><br>
+            <span>
+                Last Name <span>*</span>
+            </span><br>
+            <input type="text" [(ngModel)]="studentData.lastName" class="col-md-12" /><br>
+            <span>
+                Email <span>*</span>
+            </span><br>
+            <input type="email" [(ngModel)]="studentData.email" class="col-md-12" /><br>
+            <span>
+                Password <span>*</span>
+            </span><br>
+            <input type="password" [(ngModel)]="studentData.password" class="col-md-12" /><br>
+            <span>
+                Conform password <span>*</span>
+            </span><br>
+            <input type="password" [(ngModel)]="conformPassword" class="col-md-12" /><br>
+            <input type="button" value="Register" (click)="register()" class="col-md-12 bg-success text-white shadow-lg submit mt-3 border-0" />
+        </div>
+    </div>
+</div>

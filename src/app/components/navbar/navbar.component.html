@@ -1,0 +1,29 @@
+<div class="navbar navbar-dark bg-dark navbar-expand-sm">
+    <div class="navbar-nav">
+        <div class="nav-item">
+            <a href="" class="nav-link">
+                Home
+            </a>
+        </div>
+        <div class="nav-item" *ngIf="isLogedIn()">
+            <a href="student/dashboard" class="nav-link">
+                Dashboard
+            </a>
+        </div>
+        <div class="nav-item" *ngIf="!isLogedIn()">
+            <a href="student/register" class="nav-link">
+                Register
+            </a>
+        </div>
+        <div class="nav-item" *ngIf="!isLogedIn()">
+            <a href="student/login" class="nav-link">
+                Login
+            </a>
+        </div>
+        <div class="nav-item" *ngIf="isLogedIn()" (click)="logOut()">
+            <a href="#" class="nav-link">
+                Log out
+            </a>
+        </div>
+    </div>
+</div>

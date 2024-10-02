@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="card shadow-lg mt-5">
+        <div class="card-header bg-dark text-white display-6">
+            Student DashBoard
+        </div>
+        <div class="card-body">
+            Hi {{studentData.firstName+" " +studentData.lastName|titlecase}} 
+            <div class="row">
+                <h3 class="mb-0 mt-3">Test Results</h3>
+                <div class="card col-md-3 px-0 mt-3">
+                    <div class="card-header bg-dark text-white text-center">
+                        Maths
+                    </div>
+                    <div class="card-body">
+                        <h4 class="text-center">{{testData.maths}}</h4>
+                        <circle-progress [percent]="this.data.maths" [radius]="100" [outerStrokeWidth]="16" [outerStrokeColor]="'deeppink'" [innerStrokeColor]="'white'" [animationDuration]="400"></circle-progress>
+                    </div>
+                </div>
+                <div class="card col-md-3 px-0 mt-3">
+                    <div class="card-header bg-dark text-white text-center">
+                        Physics
+                    </div>
+                    <div class="card-body">
+                        <h4 class="text-center">{{testData.physics}}</h4>
+                        <circle-progress [percent]="this.data.physics" [radius]="100" [outerStrokeWidth]="16" [outerStrokeColor]="'deeppink'" [innerStrokeColor]="'white'" [animationDuration]="400"></circle-progress>
+                    </div>
+                </div>
+                <div class="card col-md-3 px-0 mt-3">
+                    <div class="card-header bg-dark text-white text-center">
+                        Chemistry
+                    </div>
+                    <div class="card-body">
+                        <h4 class="text-center">{{testData.chemistry}}</h4>
+                        <circle-progress [percent]="this.data.chemistry" [radius]="100" [outerStrokeWidth]="16" [outerStrokeColor]="'deeppink'" [innerStrokeColor]="'white'" [animationDuration]="400"></circle-progress>
+                    </div>
+                </div>
+                <div class="card col-md-3 px-0 mt-3 m-auto">
+                    <div class="card-header bg-dark text-white text-center">
+                        <b>Total Marks</b>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="text-center">{{testData.total}}</h3>
+                        <circle-progress [percent]="this.data.total" [radius]="100" [outerStrokeWidth]="16" [outerStrokeColor]="'darkgreen'" [innerStrokeColor]="'white'" [animationDuration]="500"></circle-progress>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

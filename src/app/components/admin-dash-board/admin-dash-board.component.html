@@ -1,0 +1,149 @@
+<div class="container mt-5">
+    <div class="card col-md-8 m-auto shadow-lg">
+        <div class="card-header bg-dark text-white">
+            Admin Dashboard
+        </div>
+        <div class="card-bodu">
+            <table class="col-md-10 mt-1 m-auto">
+                <tr>
+                    <td class="col-md-6">
+                        <input id="studentBtn" class="col-md-12 bg-success text-white border-0 active" (click)="student()" type="button" value="Student Data">
+                    </td>
+                    <td class="col-md-6">
+                        <input id="testBtn" class="col-md-12 bg-success text-white border-0" (click)="test()" type="button" value="Test Data">
+                    </td>
+                </tr>
+            </table>
+            <table *ngIf="this.studentActive" class="col-md-10 mt-1 m-auto">
+                <thead class="table-header table-dark bg-dark text-white">
+                    <th class="px-3">
+                        First name
+                    </th>
+                    <th class="px-3">
+                        Last name
+                    </th><th class="px-3">
+                        Email
+                    </th>
+                    <th class="px-3">
+                        Join approval
+                    </th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let student of studentData">
+                        <td>
+                            {{student.firstName}}
+                        </td>
+                        <td>
+                            {{student.lastName}}
+                        </td>
+                        <td>
+                            {{student.email}}
+                        </td>
+                        <td class="text-custom">
+                            <span *ngIf="!student.joinApproval"><input type="button" (click)="approve(student)" value="Approve" class="bg-danger text-white border-0 px-1 mx-2 col-md-4"></span>
+                            <span *ngIf="student.joinApproval">Approved</span>
+                            <span ><input type="button" (click)="delete(student)" value="Delete" class="bg-danger text-white border-0 mx-0 col-md-3 px-0"></span>
+                            <span ><input *ngIf="student.joinApproval" type="button" (click)="testData.email=student.email" data-bs-toggle="modal" data-bs-target="#alertModal" value="Add test Data" class="bg-danger text-white border-0 mx-1 col-md-5"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table *ngIf="!this.studentActive" class="col-md-10 mt-1 m-auto">
+                <input type="button" class="bg-danger border-0 text-white" value="Clear all Records"  data-bs-toggle="modal" data-bs-target="#alertModal">
+                <thead class="table-header table-dark bg-dark text-white">
+                    <th class="px-3">
+                        Email 
+                    </th>
+                    <th class="px-3">
+                        Maths 
+                    </th><th class="px-3">
+                        Physics
+                    </th>
+                    <th class="px-3">
+                        Chemistry
+                    </th>
+                    <th>
+                        total
+                    </th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let test of allTestData">
+                        <td>
+                            {{test.email}}
+                        </td>
+                        <td>
+                            {{test.maths}}
+                        </td>
+                        <td>
+                            {{test.physics}}
+                        </td>
+                        <td>
+                            {{test.chemistry}}
+                        </td>
+                        <td>
+                            {{test.total}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="modal" id="alertModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="card" *ngIf="!this.studentActive">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title">Conform Deletion</h5>
+                <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body bg-dark text-white">
+                Are sure to <span class="text-danger">Conform Deletion of all records</span>
+            </div>
+            <div class="modal-footer bg-dark">
+                <button type="button" class="btn btn-danger" (click)="clearAll()" data-bs-dismiss="modal">Delete</button>
+            </div>
+        </div>
+        <div class="card" *ngIf="this.studentActive">
+            <div class="modal-header bg-dark text-white">
+                Marks
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="card border-0">
+                        Email
+                    </div>
+                    <div class="card border-0">
+                        <input type="text" [value]="testData.email" [(ngModel)]="testData.email" disabled="true" name="email" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card border-0">
+                        Maths
+                    </div>
+                    <div class="card border-0">
+                        <input type="number" [(ngModel)]="testData.maths" name="email" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card border-0">
+                        Physics
+                    </div>
+                    <div class="card border-0">
+                        <input type="number" max="25" [(ngModel)]="testData.physics" name="email" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card border-0">
+                        chemistry
+                    </div>
+                    <div class="card border-0">
+                        <input type="number" max="25" [(ngModel)]="testData.chemistry" name="email" />
+                    </div>
+                </div>
+            </div>
+            <input class="bg-success text-white border-0" (click)="submitTestData()" type="button" value="Submit" data-bs-dismiss="modal">
+            </div>
+    </div>
+</div>

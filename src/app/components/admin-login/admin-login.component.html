@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="card col-md-4 m-auto shadow-lg mt-5">
+        <div *ngIf="this.adminData.errorMessage != ''" class="badge badge-danger bg-danger">
+            <h4>
+                {{this.adminData.errorMessage}}
+            </h4>
+        </div>
+        <div class="card-header bg-dark text-white">
+            Admin Login
+        </div>
+        <div class="card-body">
+            <span>
+                Email <span>*</span>
+            </span><br>
+            <input type="email" [(ngModel)]="this.adminData.email" class="col-md-12" /><br>
+            <span>
+                Password <span>*</span>
+            </span><br>
+            <input type="password" [(ngModel)]="this.adminData.password" class="col-md-12" /><br>
+            <input type="button" value="Log in" (click)="login()" class="col-md-12 bg-success text-white shadow-lg submit mt-3 border-0" />
+        </div>
+    </div>
+</div>

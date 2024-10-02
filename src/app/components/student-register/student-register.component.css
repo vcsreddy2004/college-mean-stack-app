@@ -1,0 +1,9 @@
+.card-body span span {
+    color:red;
+}
+.submit:hover {
+    background-color: rgb(13, 72, 13) !important;
+}
+.badge-danger {
+    color: rgb(115, 1, 1);
+}

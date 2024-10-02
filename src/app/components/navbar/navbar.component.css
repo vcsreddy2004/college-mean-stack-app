@@ -1,0 +1,7 @@
+.nav-item:hover {
+    background-color: rgba(67, 67, 67, 0.301);
+    border-radius: 30px;
+}
+.nav-link:hover {
+    color:white;
+}

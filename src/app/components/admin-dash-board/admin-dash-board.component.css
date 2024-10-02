@@ -1,0 +1,7 @@
+.text-custom {
+    color:rgb(0, 82, 0);
+    text-align: center;
+}
+.active {
+    background-color: rgb(32, 93, 32) !important;
+}
