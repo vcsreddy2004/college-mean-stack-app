@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Prerequisite
 
-Create a new project  with `ng new` for new Project and copy all files and paste there
+Create a new project  with `ng new <project_name>` for new Project and copy all files and paste there
 
 ## Development server
 
