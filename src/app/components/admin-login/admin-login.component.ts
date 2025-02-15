@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { adminView } from 'router/models/admin/adminView';
+import { studentView } from 'router/models/student/studentView';
 import { AdminService } from 'src/app/service/admin.service';
+import { StudentService } from 'src/app/service/student.service';
 
 @Component({
   selector: 'app-admin-login',
@@ -16,10 +18,39 @@ export class AdminLoginComponent implements OnInit {
     token: "",
     errorMessage: ""
   };
+  public studentData: studentView = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    token: "",
+    errorMessage: "",
+    joinApproval:false,
+  }
+  constructor(private adminService: AdminService,private studentService:StudentService) { 
+    if(localStorage.getItem("adminToken"))
+    {
+      this.adminData.token = String(localStorage.getItem("adminToken"));
+      this.adminService.getData(this.adminData).subscribe((res)=>{
+        location.href = "/";
+      },
+      (err)=>
+      {
+        localStorage.removeItem("token");
+      }
+      );
+    }
+    if(localStorage.getItem("token"))
+    {
+      this.studentData.token = String(localStorage.getItem("token"));
+      this.studentService.getData(this.studentData).subscribe((res)=>{
+        location.href = "/";
+      })
+    }
+  }
 
-  constructor(private adminService: AdminService) { }
-
-  ngOnInit(): void { }
+  ngOnInit(): void {
+  }
 
   public login(): void {
     if (!this.adminData.email) {

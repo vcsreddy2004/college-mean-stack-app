@@ -15,7 +15,7 @@ export class AdminService {
     let url:string = `http://${config.HOST_NAME}:${config.PORT}/api/admin/login`;
     return this.httpClient.post<adminView>(url,adminData);
   }
-  public getDataa(adminData:adminView):Observable<adminView> {
+  public getData(adminData:adminView):Observable<adminView> {
     let url:string = `http://${config.HOST_NAME}:${config.PORT}/api/admin/get-data`;
     return this.httpClient.post<adminView>(url,adminData);
   }

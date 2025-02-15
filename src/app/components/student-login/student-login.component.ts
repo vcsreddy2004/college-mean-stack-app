@@ -17,7 +17,20 @@ export class StudentLoginComponent implements OnInit {
     errorMessage:"",
     joinApproval:false
   };
-  constructor(private studentService:StudentService) { }
+  constructor(private studentService:StudentService) {
+    if(localStorage.getItem("token"))
+    {
+      this.studentData.token = String(localStorage.getItem("token"));
+      this.studentService.getData(this.studentData).subscribe((res)=>{
+        location.href = "/";
+      },
+      (err)=>
+      {
+        localStorage.removeItem("token");
+      }
+      );
+    }
+   }
 
   ngOnInit(): void {
   }

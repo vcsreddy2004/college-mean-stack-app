@@ -37,7 +37,7 @@ export class AdminDashBoardComponent implements OnInit {
     {
       this.adminData.token = String(localStorage.getItem("adminToken"));
       this.testData.token = String(localStorage.getItem("adminToken"));
-      this.adminService.getDataa(this.adminData).subscribe((res)=>{
+      this.adminService.getData(this.adminData).subscribe((res)=>{
         if(res.errorMessage != "")
         {
           location.href = "/"
