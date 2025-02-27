@@ -1,31 +1,34 @@
-# College
+# College Management System (MEAN Stack)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+## Overview
+The College Management System is a web application built using the MEAN stack (MongoDB, Express.js, Angular, and Node.js). It allows administrators, faculty, and students to manage various academic operations such as course enrollment and exam results. The system provides role-based access and an intuitive user interface.
+
+Key Features
+- Student Management – Add, update, and delete student details.
+- Faculty Dashboard – Manage courses, assignments, and student progress.
+- Exam & Results – Record and view student performance.
+- Role-Based Access – Different user roles (Admin, Faculty, Student).
+- Secure Authentication – User login with JWT-based authentication.
+- Responsive UI – Mobile-friendly Angular frontend.
 
 ## Prerequisite
 
-Create a new project  with `ng new <project_name>` for new Project and copy all files and paste there
+Create a new project  with 
+```
+ng new <project_name>
+```
+for new Project and copy all files and paste there
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run 
+```
+ng serve
+``` 
+for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Backend server
+Go to router folder and run 
+```
+npm start
+```
