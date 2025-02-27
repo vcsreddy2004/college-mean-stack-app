@@ -11,24 +11,53 @@ Key Features
 - Secure Authentication – User login with JWT-based authentication.
 - Responsive UI – Mobile-friendly Angular frontend.
 
-## Prerequisite
+# Getting Started with Create Angular App
 
-Create a new project  with 
+Follow these steps to set up and run the project.
+
+## Prerequisite
+Before running the project, ensure you have the following installed:
+
+Node.js (Download from [here](https://nodejs.org/en/download))
+
+npm (Comes with Node.js)
+
+Also you need to install typescript and Angular CLI globally. 
+
+Use the fallowing command to install typescript.
+
+```
+npm install -g typescript
+```
+Use the fallowing command to install Angular CLI
+
+```
+npm install -g @angular/cli
+```
+# Project setup
+1) Create a new project  with 
 ```
 ng new <project_name>
 ```
-for new Project and copy all files and paste there
+3) Now copy all files and paste there.
 
-## Development server
-
-Run 
+2) Then install dependencies
+```
+npm install
+```
+3) Run the fallowing command to start a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 ```
 ng serve
 ``` 
-for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Backend server
-Go to router folder and run 
+4) You need to also start backend server. Go to router folder and run 
 ```
 npm start
 ```
+
+# HURRAH YOU HAVE SUCCESSFULLY SETUP PROJECT
+
+Here are images for project
+
+![admin ](https://github.com/user-attachments/assets/bba44a68-9957-44e4-befb-38ccf00ea900)
+![dashboard](https://github.com/user-attachments/assets/323b9e2f-9442-44fe-af73-434801843579)
+![admin dashboard](https://github.com/user-attachments/assets/924015a2-81a4-474f-a120-75d9871ea619)
